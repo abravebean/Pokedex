@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/header.ejs") %>
+    <h1>Pokemon</h1>
+    <a href="/Pokemon">Homepage</a>
+</body>
+    <br class = "container">
+        <h2><%= data.name %></h2>
+    </br><img src="<%= data.img %>" alt="Avatar" class="avatar"></br>
+        Type:
+        <div>
+            <ul>
+                <%= data.type %>
+            </ul>
+        </div>
+        Stats:
+        <div>
+            <ul> hp: <%= data.stats.hp %></ul>
+            <ul> attack: <%= data.stats.attack %></ul>
+            <ul> defense: <%= data.stats.defense %></ul>
+            <ul> spattack: <%= data.stats.spattack %></ul>
+            <ul> spdefense: <%= data.stats.spdefense %></ul>
+            <ul> speed: <%= data.stats.speed %></ul>
+        </div><br>
+</div>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/header.ejs") %>
+    <div class="container">
+    <h1>My Pokedex</h1>
+    <nav>
+        <a href="/pokemon/new"><button>Add a New Pokemon</button></a>
+    </nav>
+        <ul>
+        <% for (let i = 0; i < data.length; i++) { %>
+                <a href="/pokemon/<%= i %>">
+                   <div class="box"><img src="<%= data[i].img %>" alt="Avatar" class="avatar"></div> 
+                </a>
+        
+            <form action = "/pokemon/<%= i %>?_method=DELETE" method="POST">
+                <input type = "submit" value="DELETE">
+            </form>
+      
+            <button>
+                <a href="/pokemon/<%= i %>/edit">EDIT</a>
+            </button>
+        
+        <% } %>
+    </ul>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

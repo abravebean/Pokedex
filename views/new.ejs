@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/header.ejs") %>
+    <h1>Enter a new Pokemon</h1>
+    <form action="/pokemon" method="POST">
+        Name: <input type="text" name="name" /><br>
+        Type: <input type="text" name="type" /><br>
+        Stats: <input type="number" name="stats" /><br>
+        <input type="submit" value="Create new Pokemon" />
+    </form>
+
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>
