@@ -39,7 +39,7 @@ app.put('/pokemon/:id', (req, res) => {
     res.redirect("/pokemon")
 });
 
-// DESTROY
+// DELETE
 app.delete('/pokemon/:id', (req, res) => {
     Pokemon.splice(req.params.id, 1)
     res.redirect("/pokemon")

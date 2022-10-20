@@ -6,9 +6,12 @@
     <h1>Edit Pokemon</h1>
     <form action="/pokemon/<%= data.id %>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="<%= data.name %>" /><br>
+        <label>Name</label>
         Type: <input type="text" name="type" value="<%= data.type %>" /><br>
+        <label>Type</label>
         Stats: <input type="number" name="stats" value="<%= data.stats %>" /><br>
         <input type="submit" value="Edit Pokemon" />
+        <label>Stats</label>
     </form>
 
     <%- include("./partials/footer.ejs") %>
