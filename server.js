@@ -41,8 +41,9 @@ app.put('/pokemon/:id', (req, res) => {
 
 // DELETE
 app.delete('/pokemon/:id', (req, res) => {
-    Pokemon.splice(req.params.id, 1)
+    Pokemon..findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect("/pokemon")
+  })
 })
 
 
