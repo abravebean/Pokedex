@@ -24,8 +24,10 @@ app.get('/pokemon/new', (req, res) => {
 
 // CREATE route 
 app.post('/pokemon', (req, res) => {
-    Pokemon.push(req.params.id)
+    Pokemon.create(req.body, (error, createdProduct) => {
     res.redirect("/pokemon")
+})
+
 });
 
 // EDIT route 
@@ -35,9 +37,12 @@ app.get('/pokemon/:id/edit', (req, res) => {
 
 // UPDATE route 
 app.put('/pokemon/:id', (req, res) => {
-    Pokemon[req.params.id] = req.params.id
-    res.redirect("/pokemon")
-});
+    Pokemon.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updateModel)=>
+    {
+      res.redirect('/pokemon');});
+  });
+  
+
 
 // DELETE
 app.delete('/pokemon/:id', (req, res) => {
