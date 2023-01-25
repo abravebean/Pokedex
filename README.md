@@ -1,2 +1,2 @@
 # Pokedex
-Type Npm start !!!!
+Type Npm start!!!!
